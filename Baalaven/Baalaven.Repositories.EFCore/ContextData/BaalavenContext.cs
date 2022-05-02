@@ -26,10 +26,6 @@ namespace Baalaven.Repositories.EFCore.ContextData
                 .Property(c => c.Name)
                 .IsRequired()
                 .HasMaxLength(40);
-            modelBuilder.Entity<Customer>()
-                .Property(p => p.Name)
-                .IsRequired()
-                .HasMaxLength(40);
             modelBuilder.Entity<Order>()
                 .Property(o => o.CustomerId)
                 .IsRequired()
