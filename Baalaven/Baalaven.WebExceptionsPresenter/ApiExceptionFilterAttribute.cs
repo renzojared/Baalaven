@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Baalaven.WebExceptionsPresenter
 {
-    public class ApiExceptionFilterAttribute : ApiExceptionFilterAttribute
+    public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {
         readonly IDictionary<Type, IExceptionHandler> ExceptionHandlers;
         public ApiExceptionFilterAttribute(IDictionary<Type, IExceptionHandler> exceptionHandlers) =>
@@ -24,9 +24,9 @@ namespace Baalaven.WebExceptionsPresenter
             {
                 new ExceptionHandlerBase().SetResult(context, 
                     StatusCodes.Status500InternalServerError, 
-                    "Ha ocurrido un error al procesar la respuesta.","");
-                base.OnException(context);
+                    "Ha ocurrido un error al procesar la respuesta.","");                
             }
+            base.OnException(context);
         }
     }
 }
