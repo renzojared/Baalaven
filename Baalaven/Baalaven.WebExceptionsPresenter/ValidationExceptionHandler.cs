@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Baalaven.WebExceptionsPresenter
 {
-    class ValidationExceptionHandler : ExceptionHandlerBase, IExceptionHandler
+    public class ValidationExceptionHandler : ExceptionHandlerBase, IExceptionHandler
     {
         public Task Handle(ExceptionContext context)
         {
