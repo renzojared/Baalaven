@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32413.511
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "Enterprise Business Rules", "{EEF57D7A-D81F-4903-8B0D-1BA1BF595F10}"
 EndProject
@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{88
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.Repositories.EFCore", "Baalaven.Repositories.EFCore\Baalaven.Repositories.EFCore.csproj", "{5EC54552-5DB3-40F4-B14A-287F200038B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.UseCasesDTOs", "Baalaven.UseCasesDTOs\Baalaven.UseCasesDTOs.csproj", "{CC743DBF-1C05-4776-BA1F-3570B49A379B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCasesDTOs", "Baalaven.UseCasesDTOs\Baalaven.UseCasesDTOs.csproj", "{CC743DBF-1C05-4776-BA1F-3570B49A379B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.UsesCases", "Baalaven.UsesCases\Baalaven.UsesCases.csproj", "{B5E81699-2175-4745-B06B-2CBA4BEFB8F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCases", "Baalaven.UsesCases\Baalaven.UseCases.csproj", "{B5E81699-2175-4745-B06B-2CBA4BEFB8F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
