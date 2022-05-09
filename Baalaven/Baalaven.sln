@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCasesDTOs", "Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCases", "Baalaven.UsesCases\Baalaven.UseCases.csproj", "{B5E81699-2175-4745-B06B-2CBA4BEFB8F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.IoC", "Baalaven.IoC\Baalaven.IoC.csproj", "{D6F96868-BD19-4174-B63D-C84B894EA344}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{B5E81699-2175-4745-B06B-2CBA4BEFB8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5E81699-2175-4745-B06B-2CBA4BEFB8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5E81699-2175-4745-B06B-2CBA4BEFB8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F96868-BD19-4174-B63D-C84B894EA344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F96868-BD19-4174-B63D-C84B894EA344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F96868-BD19-4174-B63D-C84B894EA344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F96868-BD19-4174-B63D-C84B894EA344}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{5EC54552-5DB3-40F4-B14A-287F200038B0} = {884A3DD8-2F21-4659-AB43-3D12E81CD202}
 		{CC743DBF-1C05-4776-BA1F-3570B49A379B} = {0AC8E028-560B-4DC8-A355-271B3D0A6F12}
 		{B5E81699-2175-4745-B06B-2CBA4BEFB8F3} = {0AC8E028-560B-4DC8-A355-271B3D0A6F12}
+		{D6F96868-BD19-4174-B63D-C84B894EA344} = {3EB5E150-7C9C-4C5D-A970-E3C260CE19A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81EA6867-DB96-47FC-A925-850CF9E9AB96}
