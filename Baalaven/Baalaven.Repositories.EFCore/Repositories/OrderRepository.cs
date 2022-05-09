@@ -1,7 +1,7 @@
 ﻿using Baalaven.Entities.Interfaces;
 using Baalaven.Entities.POCOEntities;
 using Baalaven.Entities.Specifications;
-using Baalaven.Repositories.EFCore.ContextData;
+using Baalaven.Repositories.EFCore.DataContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;

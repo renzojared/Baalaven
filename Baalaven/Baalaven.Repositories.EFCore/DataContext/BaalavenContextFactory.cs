@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baalaven.Repositories.EFCore.ContextData
+namespace Baalaven.Repositories.EFCore.DataContext
 {
     class BaalavenContextFactory : IDesignTimeDbContextFactory<BaalavenContext>
     {

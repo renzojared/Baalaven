@@ -24,7 +24,7 @@ namespace Baalaven.WebExceptionsPresenter
             {
                 new ExceptionHandlerBase().SetResult(context, 
                     StatusCodes.Status500InternalServerError, 
-                    "Ha ocurrido un error al procesar la respuesta.","");                
+                    "Ha ocurrido un error al procesar la respuesta.","abc");                
             }
             base.OnException(context);
         }

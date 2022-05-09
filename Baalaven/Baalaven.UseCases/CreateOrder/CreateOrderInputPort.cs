@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Baalaven.UsesCases.CreateOrder
+namespace Baalaven.UseCases.CreateOrder
 {
     public class CreateOrderInputPort : CreateOrderParams, IRequest<int>
     {

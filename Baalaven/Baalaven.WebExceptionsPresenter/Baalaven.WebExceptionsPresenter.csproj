@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Baalaven.UsesCases\Baalaven.UseCases.csproj" />
+    <ProjectReference Include="..\Baalaven.UseCases\Baalaven.UseCases.csproj" />
   </ItemGroup>
 
 </Project>

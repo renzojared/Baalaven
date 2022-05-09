@@ -1,9 +1,8 @@
 ﻿using Baalaven.Entities.Interfaces;
-using Baalaven.Repositories.EFCore.ContextData;
+using Baalaven.Repositories.EFCore.DataContext;
 using Baalaven.Repositories.EFCore.Repositories;
 using Baalaven.UseCases.Common.Behaviors;
 using Baalaven.UseCases.CreateOrder;
-using Baalaven.UsesCases.CreateOrder;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

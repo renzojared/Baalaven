@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Baalaven.UsesCases.CreateOrder
+namespace Baalaven.UseCases.CreateOrder
 {
     public class CreateOrderInteractor : IRequestHandler<CreateOrderInputPort, int>
     {
@@ -37,7 +37,7 @@ namespace Baalaven.UsesCases.CreateOrder
                 Discount = 10
             };
             OrderRepository.Create(Order);
-            foreach(var Item in request.OrderDetails)
+            foreach (var Item in request.OrderDetails)
             {
                 OrderDetailRepository.Create(
                     new OrderDetail
@@ -52,7 +52,7 @@ namespace Baalaven.UsesCases.CreateOrder
             {
                 await UnitOfWork.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new GeneralException("Error al crear la orden.", ex.Message);
             }

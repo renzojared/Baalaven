@@ -1,4 +1,4 @@
-﻿using Baalaven.UsesCases.CreateOrder;
+﻿using Baalaven.UseCases.CreateOrder;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Baalaven.UseCases.Common.Behaviors
 {
-    public  class ValidationBehavior<TRequest, TResponse>: 
-        IPipelineBehavior<TRequest, TResponse> 
+    public class ValidationBehavior<TRequest, TResponse> :
+        IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
         readonly IEnumerable<IValidator<TRequest>> Validators;
@@ -25,7 +25,7 @@ namespace Baalaven.UseCases.Common.Behaviors
                 .ToList();
             if (Failures.Any())
             {
-                throw new ValidationException(Failures);                
+                throw new ValidationException(Failures);
             }
             return next();
         }

@@ -22,7 +22,7 @@ namespace Baalaven.WebExceptionsPresenter
                     string.Format("Propiedad. {0}. Error: {1}", Failure.PropertyName, Failure.ErrorMessage));
             }
 
-            return SetResult(context, StatusCodes.Status400BadRequest, "Error en los datos de la entrada.", Exception.ToString());
+            return SetResult(context, StatusCodes.Status400BadRequest, "Error en los datos de la entrada.", Builder.ToString());
         }
     }
 }
