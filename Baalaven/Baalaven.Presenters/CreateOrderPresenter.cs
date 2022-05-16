@@ -1,12 +1,15 @@
-﻿namespace Baalaven.Presenters
+﻿using Baalaven.UseCasesPorts.CreateOrder;
+using System.Threading.Tasks;
+
+namespace Baalaven.Presenters
 {
-    public class CreateOrderPresenter : IPresenter<int, string>
+    public class CreateOrderPresenter : ICreateOrderOutputPort, IPresenter<string>
     {
         public string Content { get; private set; }
-
-        public void Handle(int response)
+        public Task Handle(int orderId)
         {
-            Content = $"Order ID: {response}";
+            Content = $"Order ID: {orderId}";
+            return Task.CompletedTask;
         }
     }
 }
