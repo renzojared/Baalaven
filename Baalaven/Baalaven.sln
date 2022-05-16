@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32413.511
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enterprise Business Rules", "Enterprise Business Rules", "{EEF57D7A-D81F-4903-8B0D-1BA1BF595F10}"
 EndProject
@@ -27,9 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.WebExceptionsPrese
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.WebApi", "Baalaven.WebApi\Baalaven.WebApi.csproj", "{0960CB7B-56C8-4DE1-B691-B465F3A9DF50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.UseCases", "Baalaven.UseCases\Baalaven.UseCases.csproj", "{A8CA9CB0-2E93-4BD5-B720-F75911EAB20E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCases", "Baalaven.UseCases\Baalaven.UseCases.csproj", "{A8CA9CB0-2E93-4BD5-B720-F75911EAB20E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.Presenters", "Baalaven.Presenters\Baalaven.Presenters.csproj", "{E7881826-CDB1-4F51-9B9F-3D4C9D4285CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.Presenters", "Baalaven.Presenters\Baalaven.Presenters.csproj", "{E7881826-CDB1-4F51-9B9F-3D4C9D4285CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controllers", "Controllers", "{CE720C0A-D221-48E1-92B3-E987F00CE3FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.Controllers", "Baalaven.Controllers\Baalaven.Controllers.csproj", "{CB0481CA-C3E5-498A-83EA-E05438106E06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,10 @@ Global
 		{E7881826-CDB1-4F51-9B9F-3D4C9D4285CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7881826-CDB1-4F51-9B9F-3D4C9D4285CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7881826-CDB1-4F51-9B9F-3D4C9D4285CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB0481CA-C3E5-498A-83EA-E05438106E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB0481CA-C3E5-498A-83EA-E05438106E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB0481CA-C3E5-498A-83EA-E05438106E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB0481CA-C3E5-498A-83EA-E05438106E06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +92,8 @@ Global
 		{0960CB7B-56C8-4DE1-B691-B465F3A9DF50} = {884A3DD8-2F21-4659-AB43-3D12E81CD202}
 		{A8CA9CB0-2E93-4BD5-B720-F75911EAB20E} = {0AC8E028-560B-4DC8-A355-271B3D0A6F12}
 		{E7881826-CDB1-4F51-9B9F-3D4C9D4285CA} = {47656D7E-D2A3-4E67-8E29-113B0020ADEC}
+		{CE720C0A-D221-48E1-92B3-E987F00CE3FE} = {3EB5E150-7C9C-4C5D-A970-E3C260CE19A2}
+		{CB0481CA-C3E5-498A-83EA-E05438106E06} = {CE720C0A-D221-48E1-92B3-E987F00CE3FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81EA6867-DB96-47FC-A925-850CF9E9AB96}
