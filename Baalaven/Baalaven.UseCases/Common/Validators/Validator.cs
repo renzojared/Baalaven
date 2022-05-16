@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Baalaven.UseCases.Common.Validators
 {
-    public class Validator<Model>
+    public static class Validator<Model>
     {
-        public Task<List<ValidationFailure>> Validate(Model model, IEnumerable<IValidator<Model>> validators, bool causesException = true)
+        public static Task<List<ValidationFailure>> Validate(Model model, IEnumerable<IValidator<Model>> validators, bool causesException = true)
         {
             var Failures = validators
                 .Select(v => v.Validate(model))

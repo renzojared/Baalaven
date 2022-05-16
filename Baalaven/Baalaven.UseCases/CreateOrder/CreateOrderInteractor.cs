@@ -1,9 +1,12 @@
 ﻿using Baalaven.Entities.Exceptions;
 using Baalaven.Entities.Interfaces;
 using Baalaven.Entities.POCOEntities;
+using Baalaven.UseCases.Common.Validators;
 using Baalaven.UseCasesDTOs.CreateOrder;
 using Baalaven.UseCasesPorts.CreateOrder;
+using FluentValidation;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Baalaven.UseCases.CreateOrder
@@ -14,16 +17,19 @@ namespace Baalaven.UseCases.CreateOrder
         readonly IOrderDetailRepository OrderDetailRepository;
         readonly IUnitOfWork UnitOfWork;
         readonly ICreateOrderOutputPort OutputPort;
+        readonly IEnumerable<IValidator<CreateOrderParams>> Validators;
 
         public CreateOrderInteractor(IOrderRepository orderRepository,
             IOrderDetailRepository orderDetailRepository,
             IUnitOfWork unitOfWork,
-            ICreateOrderOutputPort outputPort) =>
-            (OrderRepository, OrderDetailRepository, UnitOfWork, OutputPort) =
-            (orderRepository, orderDetailRepository, unitOfWork, outputPort);
+            ICreateOrderOutputPort outputPort,
+            IEnumerable<IValidator<CreateOrderParams>> validators) =>
+            (OrderRepository, OrderDetailRepository, UnitOfWork, OutputPort, Validators) =
+            (orderRepository, orderDetailRepository, unitOfWork, outputPort, validators);
 
         public async Task Handle(CreateOrderParams order)
         {
+            await Validator<CreateOrderParams>.Validate(order, Validators);
             Order Order = new Order
             {
                 CustomerId = order.CustomerId,
