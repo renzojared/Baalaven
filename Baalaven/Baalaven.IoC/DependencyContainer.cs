@@ -1,18 +1,14 @@
 ﻿using Baalaven.Entities.Interfaces;
+using Baalaven.Presenters;
 using Baalaven.Repositories.EFCore.DataContext;
 using Baalaven.Repositories.EFCore.Repositories;
-using Baalaven.UseCases.Common.Behaviors;
+using Baalaven.UseCases.Common.Validators;
 using Baalaven.UseCases.CreateOrder;
+using Baalaven.UseCasesPorts.CreateOrder;
 using FluentValidation;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Baalaven.IoC
 {
@@ -25,9 +21,9 @@ namespace Baalaven.IoC
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddMediatR(typeof(CreateOrderInteractor));
             services.AddValidatorsFromAssembly(typeof(CreateOrderValidator).Assembly);
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddScoped<ICreateOrderInputPort, CreateOrderInteractor>();
+            services.AddScoped<ICreateOrderOutputPort, CreateOrderPresenter>();
             return services;
         }
     }

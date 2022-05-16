@@ -6,12 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.4.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Baalaven.Presenters\Baalaven.Presenters.csproj" />
     <ProjectReference Include="..\Baalaven.Repositories.EFCore\Baalaven.Repositories.EFCore.csproj" />
     <ProjectReference Include="..\Baalaven.UseCases\Baalaven.UseCases.csproj" />
   </ItemGroup>

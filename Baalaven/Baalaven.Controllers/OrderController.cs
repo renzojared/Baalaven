@@ -1,7 +1,6 @@
 ﻿using Baalaven.Presenters;
-using Baalaven.UseCases.CreateOrder;
 using Baalaven.UseCasesDTOs.CreateOrder;
-using MediatR;
+using Baalaven.UseCasesPorts.CreateOrder;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -11,14 +10,15 @@ namespace Baalaven.Controllers
     [ApiController]
     public class OrderController
     {
-        readonly IMediator Mediator;
-        public OrderController(IMediator mediator) => Mediator = mediator;
+        readonly ICreateOrderInputPort InputPort;
+        readonly ICreateOrderOutputPort OutputPort;
+        public OrderController(ICreateOrderInputPort inputPort, ICreateOrderOutputPort outputPort) => (InputPort, OutputPort) = (inputPort, outputPort);
         
         [HttpPost("create-order")]
-        public async Task<string> CreateOrder(CreateOrderParams orderparams)
+        public async Task<string> CreateOrder(CreateOrderParams orderParams)
         {
-            CreateOrderPresenter Presenter = new CreateOrderPresenter();
-            await Mediator.Send(new CreateOrderInputPort(orderparams, Presenter));
+            await InputPort.Handle(orderParams);
+            var Presenter = OutputPort as CreateOrderPresenter;
             return Presenter.Content;
         }
     }
