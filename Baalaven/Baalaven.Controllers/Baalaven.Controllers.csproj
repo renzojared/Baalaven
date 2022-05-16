@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Baalaven.Presenters\Baalaven.Presenters.csproj" />
+    <ProjectReference Include="..\Baalaven.UseCasesDTOs\Baalaven.UseCasesDTOs.csproj" />
+    <ProjectReference Include="..\Baalaven.UseCases\Baalaven.UseCases.csproj" />
+  </ItemGroup>
+
 </Project>
