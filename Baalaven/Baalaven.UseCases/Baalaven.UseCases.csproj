@@ -6,12 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.4.0" />
-    <PackageReference Include="MediatR" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Baalaven.Entities\Baalaven.Entities.csproj" />
     <ProjectReference Include="..\Baalaven.UseCasesDTOs\Baalaven.UseCasesDTOs.csproj" />
+    <ProjectReference Include="..\Baalaven.UseCasesPorts\Baalaven.UseCasesPorts.csproj" />
   </ItemGroup>
 
 </Project>
