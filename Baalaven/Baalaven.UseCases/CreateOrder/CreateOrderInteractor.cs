@@ -49,7 +49,7 @@ namespace Baalaven.UseCases.CreateOrder
                     new OrderDetail
                     {
                         Order = Order,
-                        ProducId = Item.ProducId,
+                        ProductId = Item.ProductId,
                         UnitPrice = Item.UnitPrice,
                         Quantity = Item.Quantity
                     });

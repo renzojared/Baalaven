@@ -107,7 +107,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProducId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<short>("Quantity")
@@ -116,9 +116,9 @@ namespace Baalaven.Repositories.EFCore.Migrations
                     b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("OrderId", "ProducId");
+                    b.HasKey("OrderId", "ProductId");
 
-                    b.HasIndex("ProducId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderDetails");
                 });
@@ -174,7 +174,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
 
                     b.HasOne("Baalaven.Entities.POCOEntities.Product", null)
                         .WithMany()
-                        .HasForeignKey("ProducId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

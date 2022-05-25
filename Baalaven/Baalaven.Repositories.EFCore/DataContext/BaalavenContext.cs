@@ -46,7 +46,7 @@ namespace Baalaven.Repositories.EFCore.DataContext
                 .HasMaxLength(10);
 
             modelBuilder.Entity<OrderDetail>()
-                .HasKey(od => new { od.OrderId, od.ProducId });
+                .HasKey(od => new { od.OrderId, od.ProductId });
 
             modelBuilder.Entity<Order>()
                 .HasOne<Customer>()
@@ -55,7 +55,7 @@ namespace Baalaven.Repositories.EFCore.DataContext
             modelBuilder.Entity<OrderDetail>()
                 .HasOne<Product>()
                 .WithMany()
-                .HasForeignKey(od => od.ProducId);
+                .HasForeignKey(od => od.ProductId);
 
             modelBuilder.Entity<Product>()
                 .HasData(
