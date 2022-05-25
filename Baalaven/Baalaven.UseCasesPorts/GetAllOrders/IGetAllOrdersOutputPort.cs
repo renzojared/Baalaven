@@ -5,6 +5,6 @@ namespace Baalaven.UseCasesPorts.GetAllOrders
 {
     public interface IGetAllOrdersOutputPort
     {
-        Task Handler(GetAllOrdersOutputPort output);
+        Task Handle(GetAllOrdersOutputPort output);
     }
 }

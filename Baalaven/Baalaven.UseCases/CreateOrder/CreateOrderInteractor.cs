@@ -34,7 +34,7 @@ namespace Baalaven.UseCases.CreateOrder
             {
                 CustomerId = order.CustomerId,
                 OrderDate = DateTime.Now,
-                ShipAddres = order.ShippAddress,
+                ShipAddress = order.ShippAddress,
                 ShipCity = order.ShipCity,
                 ShipCountry = order.ShipCountry,
                 ShipPostalCode = order.ShipPostalCode,

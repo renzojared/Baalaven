@@ -32,7 +32,7 @@ namespace Baalaven.Repositories.EFCore.DataContext
                 .HasMaxLength(5)
                 .IsFixedLength();
             modelBuilder.Entity<Order>()
-                .Property(o => o.ShipAddres)
+                .Property(o => o.ShipAddress)
                 .IsRequired()
                 .HasMaxLength(60);
             modelBuilder.Entity<Order>()

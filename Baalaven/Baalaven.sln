@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{79C05F27-4077-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.WebApi", "Baalaven.WebApi\Baalaven.WebApi.csproj", "{40AE51FB-3C3D-48E6-A0A7-CBD14D75BBF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.UseCasesPorts", "Baalaven.UseCasesPorts\Baalaven.UseCasesPorts.csproj", "{B928D228-A1FB-4A91-82BD-769B78F46572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCasesPorts", "Baalaven.UseCasesPorts\Baalaven.UseCasesPorts.csproj", "{B928D228-A1FB-4A91-82BD-769B78F46572}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

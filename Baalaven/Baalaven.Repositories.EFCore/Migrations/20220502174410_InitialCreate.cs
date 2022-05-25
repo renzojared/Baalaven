@@ -40,7 +40,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<string>(type: "nchar(5)", fixedLength: true, maxLength: 5, nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ShipAddres = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
+                    ShipAddress = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     ShipCity = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     ShipCountry = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     ShipPostalCode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
