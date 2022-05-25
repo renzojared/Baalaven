@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Baalaven.UseCases.GetAllOrders
+namespace Baalaven.UseCasesDTOs.GetAllOrders
 {
     public class GetAllOrdersOutputPort
     {

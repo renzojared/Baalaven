@@ -1,12 +1,13 @@
-﻿using FluentValidation;
+﻿using Baalaven.UseCasesDTOs.GetAllOrders;
+using FluentValidation;
 
 namespace Baalaven.UseCases.GetAllOrders
 {
-    public class GetAllOrdersValidator : AbstractValidator<GetAllOrdersInputPort>
+    public class GetAllOrdersValidator : AbstractValidator<GetAllOrdersParams>
     {
         public GetAllOrdersValidator()
         {
-            RuleFor(c => c.RequestData.CustomerId).NotEmpty().WithMessage("You must provide the client identifier");
+            RuleFor(c => c.CustomerId).NotEmpty().WithMessage("You must provide the client identifier");
         }
     }
 }
