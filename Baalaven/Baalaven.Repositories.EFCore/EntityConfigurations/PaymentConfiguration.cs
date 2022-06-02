@@ -8,7 +8,7 @@ namespace Baalaven.Repositories.EFCore.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Payments> builder)
         {            
-            builder.HasKey(p => new { p.Id, p.OrderId });
+            builder.HasKey(p => new { p.Id });
             builder.HasOne<Order>()
                 .WithMany()
                 .IsRequired()

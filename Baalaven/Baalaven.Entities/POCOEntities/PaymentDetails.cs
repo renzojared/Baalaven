@@ -11,5 +11,6 @@ namespace Baalaven.Entities.POCOEntities
         public DateTime PaymentDate { get; set; }
         public PaymentType PaymentType { get; set; }
         public int IdPaymentCard { get; set; }
+        public Payments Payments { get; set; }
     }
 }

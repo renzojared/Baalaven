@@ -11,6 +11,9 @@ namespace Baalaven.Repositories.EFCore.DataContext
         public DbSet<Product> Products  { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Payments> Payments { get; set; }
+        public DbSet<PaymentDetails> PaymentDetails { get; set; }
+        public DbSet<PaymentCards> PaymentCards { get; set; }
 
         protected override void OnModelCreating( ModelBuilder modelBuilder )
         {
