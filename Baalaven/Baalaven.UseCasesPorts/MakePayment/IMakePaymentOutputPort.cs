@@ -1,10 +1,10 @@
-﻿using Baalaven.UseCasesDTOs.GetPayments;
+﻿using Baalaven.UseCasesDTOs.MakePayment;
 using System.Threading.Tasks;
 
 namespace Baalaven.UseCasesPorts.MakePayment
 {
     public interface IMakePaymentOutputPort
     {
-        Task Handle(GetPaymentsOutputPort output);
+        Task Handle(MakePaymentOutputPort output);
     }
 }

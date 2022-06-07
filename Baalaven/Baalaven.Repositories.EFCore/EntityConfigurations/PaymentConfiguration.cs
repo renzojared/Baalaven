@@ -13,8 +13,8 @@ namespace Baalaven.Repositories.EFCore.EntityConfigurations
                 .WithMany()
                 .IsRequired()
                 .HasForeignKey(p => p.OrderId);
-            builder.Property(p => p.AmountPayable)
-                .IsRequired();           
+            builder.Property(p => p.AmountPayable);
+                //.IsRequired();           
         }
     }
 }
