@@ -11,10 +11,9 @@ namespace Baalaven.Presenters.MakePaymentsDTO
 
     public class Payment
     {
-        public int IdPayment { get; set; }
         public int OrderId { get; set; }
         public decimal AmountPayable { get; set; }
-        public string PaymentStatus { get; set; }
+        public PaymentStatus PaymentStatus { get; set; }
         public List<PaymentDetail> PaymentDetails { get; set; }
     }
 

@@ -20,6 +20,10 @@ namespace Baalaven.Controllers
             OutputPort = outputPort;
         }
         [HttpPost("make-payment")]
+        [ProducesResponseType(typeof(MakePaymentOutputPort), 200)]
+        [ProducesResponseType(typeof(ProblemDetails), 400)]
+        [ProducesResponseType(typeof(ProblemDetails), 500)]
+
         public async Task<MakePaymentsOutput> MakePayment(MakePaymentParams makePaymentParams)
         {
             await InputPort.Handle(makePaymentParams);

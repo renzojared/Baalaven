@@ -11,15 +11,13 @@ namespace Baalaven.UseCasesDTOs.MakePayment
 
     public class MakePayments
     {
-        public int IdPayment { get; private set; }
         public int OrderId { get; private set; }
         public decimal AmountPayable { get; private set; }
-        public string PaymentStatus { get; private set; }
+        public PaymentStatus PaymentStatus { get; private set; }
         public List<MakePaymentDetails> PaymentDetails { get; set; }
 
-        public MakePayments(int idPayment, int orderId, decimal amountPayable, string paymentStatus)
+        public MakePayments(int orderId, decimal amountPayable, PaymentStatus paymentStatus)
         {
-            IdPayment = idPayment;
             OrderId = orderId;
             AmountPayable = amountPayable;
             PaymentStatus = paymentStatus;

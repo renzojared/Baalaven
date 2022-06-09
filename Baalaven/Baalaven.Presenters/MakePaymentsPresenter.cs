@@ -16,7 +16,6 @@ namespace Baalaven.Presenters
             var payments = ouput.Payments
                 .Select(s => new Payment
                 {
-                    IdPayment = s.IdPayment,
                     OrderId = s.OrderId,
                     AmountPayable = s.AmountPayable,
                     PaymentStatus = s.PaymentStatus,
@@ -27,14 +26,15 @@ namespace Baalaven.Presenters
                         PaidAmount = pd.PaidAmount,
                         PaymentDate = pd.PaymentDate,
                         PaymentType = pd.PaymentType
-                    }
-                    ).ToList()
+                    }).ToList()
                 })
                 .ToList();
+
             Content = new MakePaymentsOutput()
             {
                 Payments = payments
             };
+
             return Task.CompletedTask;
         }        
     }

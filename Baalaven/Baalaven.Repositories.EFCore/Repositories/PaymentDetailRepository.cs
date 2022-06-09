@@ -2,7 +2,7 @@
 using Baalaven.Entities.POCOEntities;
 using Baalaven.Entities.Specifications;
 using Baalaven.Repositories.EFCore.DataContext;
-using System;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,7 +22,9 @@ namespace Baalaven.Repositories.EFCore.Repositories
         public IEnumerable<PaymentDetails> GetPaymentDetailsByEspecification(Specification<PaymentDetails> specification)
         {
             var expressionDelegate = specification.Expression.Compile();
-            return Context.PaymentDetails.Where(expressionDelegate);
+            return Context.PaymentDetails
+                .Include(i => i.Payments)                
+                .Where(expressionDelegate);
         }
     }
 }
