@@ -1,10 +1,6 @@
 ﻿using Baalaven.Entities.POCOEntities;
+using Baalaven.Repositories.EFCore.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Baalaven.Repositories.EFCore.DataContext
 {
@@ -15,62 +11,20 @@ namespace Baalaven.Repositories.EFCore.DataContext
         public DbSet<Product> Products  { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Payments> Payments { get; set; }
+        public DbSet<PaymentDetails> PaymentDetails { get; set; }
+        public DbSet<PaymentCards> PaymentCards { get; set; }
 
         protected override void OnModelCreating( ModelBuilder modelBuilder )
         {
-            modelBuilder.Entity<Customer>()
-                .Property(c => c.Id)
-                .HasMaxLength(5)
-                .IsFixedLength();
-            modelBuilder.Entity<Customer>()
-                .Property(c => c.Name)
-                .IsRequired()
-                .HasMaxLength(40);
-            modelBuilder.Entity<Order>()
-                .Property(o => o.CustomerId)
-                .IsRequired()
-                .HasMaxLength(5)
-                .IsFixedLength();
-            modelBuilder.Entity<Order>()
-                .Property(o => o.ShipAddress)
-                .IsRequired()
-                .HasMaxLength(60);
-            modelBuilder.Entity<Order>()
-                .Property(o => o.ShipCity)                
-                .HasMaxLength(15);
-            modelBuilder.Entity<Order>()
-                .Property(o => o.ShipCountry)
-                .HasMaxLength(15);
-            modelBuilder.Entity<Order>()
-                .Property(o => o.ShipPostalCode)
-                .HasMaxLength(10);
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
 
-            modelBuilder.Entity<OrderDetail>()
-                .HasKey(od => new { od.OrderId, od.ProductId });
-
-            modelBuilder.Entity<Order>()
-                .HasOne<Customer>()
-                .WithMany()
-                .HasForeignKey(o => o.CustomerId);
-            modelBuilder.Entity<OrderDetail>()
-                .HasOne<Product>()
-                .WithMany()
-                .HasForeignKey(od => od.ProductId);
-
-            modelBuilder.Entity<Product>()
-                .HasData(
-                    new Product { Id = 1, Name = "Chai" },
-                    new Product { Id = 2, Name = "Chang" },
-                    new Product { Id = 3, Name = "Aniseed Syrup" }
-                );
-
-            modelBuilder.Entity<Customer>()
-                .HasData(
-                new Customer { Id = "ALFKI", Name = "Alfreds F." },
-                new Customer { Id = "ANATR", Name = "Ana Trujillo" },
-                new Customer { Id = "ANTON", Name = "Antonio Moreno" }
-                );
-
+            modelBuilder.ApplyConfiguration(new PaymentConfiguration());
+            modelBuilder.ApplyConfiguration(new PaymentDetailsConfiguration());
+            modelBuilder.ApplyConfiguration(new PaymentCardsConfiguration());            
         }
 
     }

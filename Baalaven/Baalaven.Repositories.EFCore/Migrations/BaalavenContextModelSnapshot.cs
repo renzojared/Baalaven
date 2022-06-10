@@ -75,7 +75,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ShipAddres")
+                    b.Property<string>("ShipAddress")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
@@ -123,6 +123,123 @@ namespace Baalaven.Repositories.EFCore.Migrations
                     b.ToTable("OrderDetails");
                 });
 
+            modelBuilder.Entity("Baalaven.Entities.POCOEntities.PaymentCards", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CVVData")
+                        .HasMaxLength(3)
+                        .HasColumnType("int");
+
+                    b.Property<string>("CardHolderName")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("nvarchar(16)");
+
+                    b.Property<int>("CardType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ExpireDate")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentCards");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CVVData = 123,
+                            CardHolderName = "OSCAR CAMA",
+                            CardNumber = "1234567893215765",
+                            CardType = 1,
+                            ExpireDate = "042026"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CVVData = 456,
+                            CardHolderName = "ABRAHAM HERNANDEZ",
+                            CardNumber = "7869372388034728",
+                            CardType = 0,
+                            ExpireDate = "122027"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CVVData = 789,
+                            CardHolderName = "PIERO ALVARADO",
+                            CardNumber = "8294782314653892",
+                            CardType = 2,
+                            ExpireDate = "072022"
+                        });
+                });
+
+            modelBuilder.Entity("Baalaven.Entities.POCOEntities.PaymentDetails", b =>
+                {
+                    b.Property<int>("IdPaymentDetails")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPaymentCard")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PaidAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdPaymentDetails", "PaymentsId");
+
+                    b.HasIndex("IdPaymentCard");
+
+                    b.HasIndex("PaymentsId");
+
+                    b.ToTable("PaymentDetails");
+                });
+
+            modelBuilder.Entity("Baalaven.Entities.POCOEntities.Payments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("AmountPayable")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("OrderId")
+                        .HasMaxLength(5)
+                        .HasColumnType("int")
+                        .IsFixedLength(true);
+
+                    b.Property<int>("PaymentStatus")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Payments");
+                });
+
             modelBuilder.Entity("Baalaven.Entities.POCOEntities.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -131,7 +248,9 @@ namespace Baalaven.Repositories.EFCore.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -179,6 +298,32 @@ namespace Baalaven.Repositories.EFCore.Migrations
                         .IsRequired();
 
                     b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Baalaven.Entities.POCOEntities.PaymentDetails", b =>
+                {
+                    b.HasOne("Baalaven.Entities.POCOEntities.PaymentCards", null)
+                        .WithMany()
+                        .HasForeignKey("IdPaymentCard")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Baalaven.Entities.POCOEntities.Payments", "Payments")
+                        .WithMany()
+                        .HasForeignKey("PaymentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Payments");
+                });
+
+            modelBuilder.Entity("Baalaven.Entities.POCOEntities.Payments", b =>
+                {
+                    b.HasOne("Baalaven.Entities.POCOEntities.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
