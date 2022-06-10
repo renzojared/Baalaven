@@ -108,7 +108,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderId = table.Column<int>(type: "int", nullable: false),
+                    OrderId = table.Column<int>(type: "int", fixedLength: true, maxLength: 5, nullable: false),
                     AmountPayable = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PaymentStatus = table.Column<int>(type: "int", nullable: false)
                 },
@@ -128,16 +128,15 @@ namespace Baalaven.Repositories.EFCore.Migrations
                 columns: table => new
                 {
                     IdPaymentDetails = table.Column<int>(type: "int", nullable: false),
-                    IdPayment = table.Column<int>(type: "int", nullable: false),
+                    PaymentsId = table.Column<int>(type: "int", nullable: false),
                     PaidAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentType = table.Column<int>(type: "int", nullable: false),
-                    IdPaymentCard = table.Column<int>(type: "int", nullable: false),
-                    PaymentsId = table.Column<int>(type: "int", nullable: true)
+                    IdPaymentCard = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PaymentDetails", x => new { x.IdPaymentDetails, x.IdPayment });
+                    table.PrimaryKey("PK_PaymentDetails", x => new { x.IdPaymentDetails, x.PaymentsId });
                     table.ForeignKey(
                         name: "FK_PaymentDetails_PaymentCards_IdPaymentCard",
                         column: x => x.IdPaymentCard,
@@ -145,17 +144,11 @@ namespace Baalaven.Repositories.EFCore.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_PaymentDetails_Payments_IdPayment",
-                        column: x => x.IdPayment,
-                        principalTable: "Payments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_PaymentDetails_Payments_PaymentsId",
                         column: x => x.PaymentsId,
                         principalTable: "Payments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -197,11 +190,6 @@ namespace Baalaven.Repositories.EFCore.Migrations
                 name: "IX_Orders_CustomerId",
                 table: "Orders",
                 column: "CustomerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_PaymentDetails_IdPayment",
-                table: "PaymentDetails",
-                column: "IdPayment");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PaymentDetails_IdPaymentCard",

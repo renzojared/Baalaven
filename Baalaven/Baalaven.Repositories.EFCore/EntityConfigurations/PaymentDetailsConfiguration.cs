@@ -8,10 +8,7 @@ namespace Baalaven.Repositories.EFCore.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<PaymentDetails> builder)
         {
-            builder.HasKey(pd => new { pd.IdPaymentDetails });
-            builder.HasOne<Payments>()
-                .WithMany()
-                .HasForeignKey(pd => pd.IdPayment);
+            builder.HasKey(pd => new { pd.IdPaymentDetails, pd.PaymentsId });
             builder.HasOne<PaymentCards>()
                 .WithMany()
                 .HasForeignKey(pd => pd.IdPaymentCard);

@@ -6,7 +6,7 @@ namespace Baalaven.Entities.POCOEntities
     public class PaymentDetails
     {
         public int IdPaymentDetails { get; set; }
-        public int IdPayment { get; set; }
+        public int PaymentsId { get; set; }
         public decimal PaidAmount { get; set; }
         public DateTime PaymentDate { get; set; }
         public PaymentType PaymentType { get; set; }

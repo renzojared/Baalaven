@@ -55,13 +55,14 @@ namespace Baalaven.UseCases.MakePayment
                     });
             }
 
-            //output
             var output = new MakePaymentOutputPort();
-            output.Payments = new List<MakePayments>();
 
             try
             {
                 await UnitOfWork.SaveChangesAsync();
+
+                //output
+                output.Payments = new List<MakePayments>();
 
                 var expressionPaymentDetail = new Specification<PaymentDetails>(od => od.Payments.OrderId == Payments.OrderId);
                 var paymentDetail = PaymentDetailRepository.GetPaymentDetailsByEspecification(expressionPaymentDetail).ToList();

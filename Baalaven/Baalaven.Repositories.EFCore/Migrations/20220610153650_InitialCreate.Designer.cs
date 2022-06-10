@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Baalaven.Repositories.EFCore.Migrations
 {
     [DbContext(typeof(BaalavenContext))]
-    [Migration("20220602195125_InitialCreate")]
+    [Migration("20220610153650_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,7 +193,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
                     b.Property<int>("IdPaymentDetails")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdPayment")
+                    b.Property<int>("PaymentsId")
                         .HasColumnType("int");
 
                     b.Property<int>("IdPaymentCard")
@@ -208,12 +208,7 @@ namespace Baalaven.Repositories.EFCore.Migrations
                     b.Property<int>("PaymentType")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PaymentsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdPaymentDetails", "IdPayment");
-
-                    b.HasIndex("IdPayment");
+                    b.HasKey("IdPaymentDetails", "PaymentsId");
 
                     b.HasIndex("IdPaymentCard");
 
@@ -233,7 +228,9 @@ namespace Baalaven.Repositories.EFCore.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("OrderId")
-                        .HasColumnType("int");
+                        .HasMaxLength(5)
+                        .HasColumnType("int")
+                        .IsFixedLength(true);
 
                     b.Property<int>("PaymentStatus")
                         .HasColumnType("int");
@@ -307,12 +304,6 @@ namespace Baalaven.Repositories.EFCore.Migrations
 
             modelBuilder.Entity("Baalaven.Entities.POCOEntities.PaymentDetails", b =>
                 {
-                    b.HasOne("Baalaven.Entities.POCOEntities.Payments", null)
-                        .WithMany()
-                        .HasForeignKey("IdPayment")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Baalaven.Entities.POCOEntities.PaymentCards", null)
                         .WithMany()
                         .HasForeignKey("IdPaymentCard")
@@ -321,7 +312,9 @@ namespace Baalaven.Repositories.EFCore.Migrations
 
                     b.HasOne("Baalaven.Entities.POCOEntities.Payments", "Payments")
                         .WithMany()
-                        .HasForeignKey("PaymentsId");
+                        .HasForeignKey("PaymentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Payments");
                 });
