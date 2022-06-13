@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Baalaven.Repositories.EFCore.Migrations
 {
     [DbContext(typeof(BaalavenContext))]
-    [Migration("20220610153650_InitialCreate")]
+    [Migration("20220613041516_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
