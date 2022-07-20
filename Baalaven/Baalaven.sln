@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.UseCasesPorts", "B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{83E95428-CA40-452C-8BD0-C6C08362920E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.Tests", "Baalaven.Tests\Baalaven.Tests.csproj", "{49B2CD6E-D7A0-4516-A7EC-CBFE6C8013E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baalaven.Tests", "Baalaven.Tests\Baalaven.Tests.csproj", "{49B2CD6E-D7A0-4516-A7EC-CBFE6C8013E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baalaven.UTest", "Baalaven.UTest\Baalaven.UTest.csproj", "{F566F4CE-E6D9-47EE-A239-D25EE616C6E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{49B2CD6E-D7A0-4516-A7EC-CBFE6C8013E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B2CD6E-D7A0-4516-A7EC-CBFE6C8013E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49B2CD6E-D7A0-4516-A7EC-CBFE6C8013E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F566F4CE-E6D9-47EE-A239-D25EE616C6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F566F4CE-E6D9-47EE-A239-D25EE616C6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F566F4CE-E6D9-47EE-A239-D25EE616C6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F566F4CE-E6D9-47EE-A239-D25EE616C6E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{40AE51FB-3C3D-48E6-A0A7-CBD14D75BBF8} = {79C05F27-4077-497E-81E8-99D3B8B1EC4C}
 		{B928D228-A1FB-4A91-82BD-769B78F46572} = {0AC8E028-560B-4DC8-A355-271B3D0A6F12}
 		{49B2CD6E-D7A0-4516-A7EC-CBFE6C8013E0} = {83E95428-CA40-452C-8BD0-C6C08362920E}
+		{F566F4CE-E6D9-47EE-A239-D25EE616C6E3} = {83E95428-CA40-452C-8BD0-C6C08362920E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81EA6867-DB96-47FC-A925-850CF9E9AB96}
